@@ -23,9 +23,9 @@ elementoFormulario.addEventListener("submit", function(event) {
         return;
     }
 
-    elementoSaldo.textContent = saldo.toString();
+    elementoSaldo.textContent = formatarMoeda(saldo);
 
-    const novaTransacao: Trannsacao = {
+    const novaTransacao: Transacao = {
         tipoTransacao: tipoTransacao,
         valor: valor,
         data: data
