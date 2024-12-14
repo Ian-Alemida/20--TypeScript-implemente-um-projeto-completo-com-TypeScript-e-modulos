@@ -13,7 +13,7 @@
 
     & .transacoes-group {
         margin-bottom: 16px;
-        
+
         .mes-group {
             color: var(--cor-secundaria);
             font-weight: 600;
@@ -49,6 +49,15 @@
                 margin-bottom: 0;
             }
         }
+    }
+
+    & .resumo-transacoes {
+        margin-bottom: 0px;
+    }
+
+
+    & .total-transacoes {
+        margin: 6px 0;
     }
 
     @media (max-width: 950px) {
