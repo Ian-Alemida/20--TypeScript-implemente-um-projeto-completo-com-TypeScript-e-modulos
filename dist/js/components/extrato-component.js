@@ -5,7 +5,7 @@ const elementoRegistroTransacoesExtrato = document.querySelector(".extrato .regi
 renderizarExtrato();
 function renderizarExtrato() {
     const gruposTransacoes = Conta.getGruposTransacoes();
-    elementoRegistroTransacoesExtrato.innerHTML = "";
+    const resumoTransacoes = Conta.getTransacoesAgrupadas();
     let htmlRegistroTransacoes = "";
     for (let grupoTransacao of gruposTransacoes) {
         let htmlTransacaoItem = "";
@@ -27,6 +27,16 @@ function renderizarExtrato() {
             </div>
         `;
     }
+    htmlRegistroTransacoes += `
+        <div>
+            <strong class="resumo-transacoes" >Resumo  das transações:</strong>
+            <div>
+                <p class="total-transacoes">depósitos: </br>${formatarMoeda(resumoTransacoes.totalDepositos)}</p>
+                <p class="total-transacoes">transferências: </br>${formatarMoeda(resumoTransacoes.totalTransferencias)}</p>
+                <p class="total-transacoes">pagamento de boletos: </br>${formatarMoeda(resumoTransacoes.totalPagamentosBoleto)}</p>
+            </div>
+        </div>
+        `;
     elementoRegistroTransacoesExtrato.innerHTML = htmlRegistroTransacoes;
 }
 const ExtratoComponent = {

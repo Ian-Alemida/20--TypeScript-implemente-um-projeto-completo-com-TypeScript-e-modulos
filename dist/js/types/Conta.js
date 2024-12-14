@@ -63,13 +63,13 @@ const Conta = {
         console.log(this.getGruposTransacoes());
         localStorage.setItem("transacoes", JSON.stringify(transacoes));
     },
-    agruparTransacoes() {
+    getTransacoesAgrupadas() {
         const resumo = {
             totalDepositos: 0,
             totalTransferencias: 0,
             totalPagamentosBoleto: 0
         };
-        this.transacoes.forEach(transacao => {
+        transacoes.forEach(transacao => {
             switch (transacao.tipoTransacao) {
                 case TipoTransacao.DEPOSITO:
                     resumo.totalDepositos += transacao.valor;
